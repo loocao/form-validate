@@ -41,7 +41,7 @@
         config = $.extend({}, $.fn.formValidate.defaults, config);
         //表单元素
         var elements = this.elements = [];
-        form.find('input,select,textarea').each(function(){
+        form.find('input,select,textarea').filter('['+config.prefix+'-pattern]').each(function(){
             elements.push(new Element(this, config));
         });
         var correct = true; //表单验证结果
@@ -95,7 +95,7 @@
         }
         function checkAll () {
             $(elements).each(function () {
-                check($(this));
+                check(this);
             });
         }
 
