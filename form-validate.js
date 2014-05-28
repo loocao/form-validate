@@ -106,9 +106,15 @@
                 });
             });
         }
+        function resetCorrect(){
+            correct = true;
+        }
         form.submit(function(){
             checkAll();
-            return correct;
+            var result = correct;
+            //每次点击submit,重置correct,以免影响下次验证
+            resetCorrect();
+            return result;
         });
     }
 
