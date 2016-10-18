@@ -119,9 +119,9 @@
             //每次点击submit,重置correct,以免影响下次验证
             resetCorrect();
             if (result) {
-                return config.success.call(form);
+                return config.success.call(form.get(0));
             } else {
-                config.error.call(form);
+                config.error.call(form.get(0));
                 return false;
             }
         });
