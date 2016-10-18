@@ -17,19 +17,19 @@
         this.source = $(element);
         this.config = config;
     }
-    Element.attrs = ['classtarget', 'correctclass', 'errorclass', 'msgtarget', 'msg', 'pattern']
+    Element.attrs = ['classtarget', 'correctclass', 'errorclass', 'msgtarget', 'msg', 'pattern'];
     Element.prototype.attr = function(){
         if(Element.attrs.indexOf(arguments[0]) >= 0){
             return this.source.attr.call(this.source, this.config.prefix + '-' + arguments[0]);
         }
         return this.source.attr.apply(this.source, arguments);
-    }
+    };
     Element.prototype.val = function(){
         return this.source.val.apply(this.source, arguments);
-    }
+    };
     Element.prototype.each = function(){
         return this.source.each.apply(this.source, arguments);
-    }
+    };
 
     /**
      * 表单验证类
